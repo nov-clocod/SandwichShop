@@ -11,6 +11,7 @@ public class SandwichShop {
 
         System.out.println("What is your age?");
         int age = myScanner.nextInt();
+        myScanner.nextLine();
 
         float basePrice = 0.0f;
 
@@ -20,6 +21,19 @@ public class SandwichShop {
             basePrice = 8.95f;
         } else {
             System.out.println(sizeSandwich + " <-- Invalid input!");
+        }
+
+        System.out.println("Do you want your sandwich to be loaded? (yes or no)");
+        String sandwichLoaded = myScanner.nextLine();
+
+        if (sandwichLoaded.equalsIgnoreCase("yes")) {
+            if (sizeSandwich == 1) {
+                basePrice++;
+            } else {
+                basePrice += 1.75f;
+            }
+        } else {
+            System.out.println("No extra cost!");
         }
 
         float discount = 0.0f;
